@@ -1,14 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  background: #fff;
   width: 400px;
-  height: 400px;
-  padding: 10px;
+  padding: 10px 0;
+
+  border-radius: 8px;
 `;
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+
   img {
     margin: 0 10px;
     border-radius: 50%;

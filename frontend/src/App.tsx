@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import Router from "./route";
 
-import PainelTweets from "./page/PainelTweets";
 import GlobalStyles from "./styles/global";
-import Dashboard from "./page/Dashboard";
 
 function App() {
   return (
-    <>
-      <Dashboard />
+    <BrowserRouter>
+      <Router />
       <GlobalStyles />
-    </>
+    </BrowserRouter>
   );
 }
 

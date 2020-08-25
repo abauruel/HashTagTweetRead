@@ -1,7 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 interface IButtonAction {
   accept: boolean;
 }
+
+interface IContainerInputHashTag {
+  loading: boolean;
+}
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(360deg)
+  }
+`;
+
 export const Container = styled.div`
   height: 100vh;
   background: #192834;
@@ -9,7 +23,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-export const ContainerInputHashTag = styled.div`
+export const ContainerInputHashTag = styled.div<IContainerInputHashTag>`
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -36,6 +50,14 @@ export const ContainerInputHashTag = styled.div`
     padding: 10px;
     border-radius: 4px;
   }
+
+  ${(props) =>
+    props.loading &&
+    css`
+      svg {
+        animation: ${rotate} 2s linear infinite;
+      }
+    `}
 `;
 
 export const ContainerHashTag = styled.div`
@@ -50,7 +72,7 @@ export const ContainerHashTag = styled.div`
     align-items: center;
     padding: 10px;
     color: #fff;
-    background: #3c3c3c;
+    background: #1a91da;
     border-radius: 8px;
 
     button {
@@ -63,9 +85,11 @@ export const ContainerHashTag = styled.div`
 
 export const ContainerTweetToApprove = styled.div`
   margin: 5px 0;
+  overflow: auto;
+  max-height: 700px;
 `;
 export const ContainerContentTweet = styled.div`
-  width: 400px;
+  width: 700px;
   background: #fff;
   padding: 5px;
   border-radius: 4px;

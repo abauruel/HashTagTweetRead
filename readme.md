@@ -18,7 +18,9 @@
 <a href="#memo-license">License</a>
 
 </p>
+<p align="center">
 <img src="https://media.giphy.com/media/dt6m8vb6VfSke9y2Zi/giphy.gif" />
+ </p
 <br>
 
 ## :rocket: Tecnologias
